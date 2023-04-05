@@ -19,11 +19,12 @@ const GameBoard = () => {
       setHint("숫자를 입력해주세요!");
       return;
     }
+    //숫자가 아닌 문자를 입력했을때 NaN이 나오도록 하는 코드
     if (0 > checkNum || checkNum >= 100) {
       setHint("숫자를 잘못 입력하셨습니다.");
       return;
     }
-    // if을 이용하여 값을 비교하는데 사용.
+    // if을 이용하여 값을 비교하는데 사용. ㅇ보다 작거나 100보다 큰경우 메세지 송출 코드
 
     if (randomNum === checkNum) {
       setHint("정답입니다!!! 랜덤값을 초기화 합니다.");
