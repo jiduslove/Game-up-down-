@@ -1,5 +1,23 @@
+import { useEffect } from "react";
+import GameBoard from "./components/GameBoard";
+import GameResult from "./components/GameResult";
+
 function App() {
-  return <div className="bg-red-100">Hello, React</div>;
+  useEffect(() => {
+    let savedPoint = localStorage.getItem("point");
+
+    if (!savedPoint) {
+      localStorage.setItem("point", 0);
+    }
+  }, []);
+  //savedPoint가 없는경우 강제적으로 0점을 부여한다.
+
+  return (
+    <div className="flex flex-col justify-center items-center min-h-screen">
+      <GameResult />
+      <GameBoard />
+    </div>
+  );
 }
 
 export default App;
